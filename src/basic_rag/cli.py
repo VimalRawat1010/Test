@@ -1,4 +1,5 @@
-from .evaluator import evaluate_faithfulness
+from .evaluator_faithfulness import evaluate_faithfulness
+from .evaluator_relevance import evaluate_answer_relevance
 from .pdf_reader import load_pdf_text
 
 
@@ -14,6 +15,11 @@ def main() -> None:
     print(f"Faithfulness Score: {result.faithfulness_score}")
     print(f"Unsupported Claims: {result.unsupported_claims}")
 
+    relevance_score = evaluate_answer_relevance(
+        query="What is the maximum capacity of frunt trunck ?",
+        answer=answer_text
+    )
+    print(f"Answer Relevance Score (FRUNK): {relevance_score:.4f}")
 
 if __name__ == "__main__":
     main()

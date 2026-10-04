@@ -22,6 +22,7 @@ def build_faithfulness_prompt(context: str, answer: str) -> str:
 def evaluate_faithfulness(context: str, answer: str, model: str | None = None) -> ClaimVerification:
     client = get_openai_client()
     prompt = build_faithfulness_prompt(context, answer)
+    #print(f"Prompt: {prompt}")  # Debugging line to print the prompt
     response = client.beta.chat.completions.parse(
         model=model or get_settings().model,
         response_format=ClaimVerification,
