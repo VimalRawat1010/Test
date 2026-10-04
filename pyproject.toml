@@ -4,10 +4,15 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 authors = [
-    { name = "ranusharma09@gmail.com", email = "ranusharma09@gmail.com" }
+    { name = "rVimal Rawat", email = "vimal.biochem@gmail.com" }
 ]
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+    "openai>=1.0.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "pypdf>=5.0.0",
+]
 
 [project.scripts]
 basic-rag = "basic_rag:main"
